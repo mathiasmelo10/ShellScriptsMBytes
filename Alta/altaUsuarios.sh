@@ -1,28 +1,9 @@
 #!/bin/bash
 
-
-#function checkUserPassword (){
-#passwordConfirmed = ""
-#while true
-#do	
-#if $userPassword != $confirmUserPassword
-#then 
-#	$passwordConfirmed = false
-#	echo Passwords dont match
-
-#elif $userPassword = $confirmUserPassword
-#then
-#	$passwordConfirmed = true
-#	echo Passwords match perfectly
-#	break
-#fi
-#done
-#}
-
 function userInformation(){
-echo +==================================================================+
-echo + Welcome to Users Register                                        +
-echo +==================================================================+
+echo -e "+==================================================================+"
+echo -e "+ Welcome to Users Register                                        +"
+echo -e "+==================================================================+"
 read -p "Write a New User Name: " userName  
 echo                                                                                                           
 read -sp "Write a New Password: " userPassword
@@ -40,12 +21,12 @@ echo
 read -p "Write a Second Surname: " secondSurname
 echo 
 read -p "Write a Nick Name: " nickName
-echo +==================================================================+                                                                 
+echo "+==================================================================+"                                                                 
 
 }
 userInformation
-sh .Datos/conectarBD.sh 
+source .Datos/conectarBD.sh 
 # Sentencia Sql para que la muestre
-mysql -h $sql_host -u $slq_usuario -p$sql_password -D $sql_database -s -e "INSERT INTO users(User_Login,User_Password) VALUES ($userName,$userPassword);"
-mysql -h $sql_host -u $slq_usuario -p$sql_password -D $sql_database -s -e "INSERT INTO persons(CI,Firt_Name,Second_Name,First_Surname,Second_Surname,Nick_Name) VALUES ($ci,$firstName,$secondName,$firstSurname,$secondSurname,$nickName);"
+mysql -h $host -u $user -p$password -D $database -s -e "INSERT INTO users(User_Login,User_Password) VALUES ($userName,$userPassword);"
+mysql -h $host -u $user -p$password -D $database -s -e "INSERT INTO persons(CI,Firt_Name,Second_Name,First_Surname,Second_Surname,Nick_Name) VALUES ($ci,$firstName,$secondName,$firstSurname,$secondSurname,$nickName);"
 

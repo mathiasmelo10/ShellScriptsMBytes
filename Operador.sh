@@ -1,23 +1,22 @@
 #!/bin/bash
 function operador()
 {
-	echo Bienvenido al Operador del Sistema de Chat Institucional
-	echo 1-Gestión
-	echo 2-Logs
-	echo 3-Back Up
-	echo 4-Configurar BD 
-	echo 0-Salir
+	echo "Bienvenido al Operador del Sistema de Chat Institucional MBytes"
+	echo "1-Gestión"
+	echo "2-Logs"
+	echo "3-Back Up"
+	echo "4-Configurar BD" 
+	echo "0-Salir"
 }
 
 function gestion()
 {
-	echo 1- Alta
-	echo 2- Baja
-	echo 3- Modificación
-	echo 4- Volver a Menú Operador
-	echo 0- Salir del Operador
+	echo "1- Alta"
+	echo "2- Baja"
+	echo "3- Modificación"
+	echo "4- Volver a Menú Operador"
+	echo "0- Salir del Operador"
 }
-
 
 
 function logs()
@@ -25,7 +24,15 @@ function logs()
 	sh Logs/Logs.sh
 }
 
+function backup()
+{
+	echo "Bienvenido al Menú de Back Up"
+	echo "1- Back Up Archivos"
+	echo "2-Back Up Base de Datos"   
+	echo "3-Back Up Configuración de Red" #Hecho
+	echo "4-Back Up Operador" #Hecho
 
+}
 
 operador
 while true
@@ -195,8 +202,18 @@ do
 			;;
 			4)
 			clear
-			operador
+			echo "1-Insertar parámetros de la Base de Datos."
+			echo "2-Volver al Operador."
+			read -p "Seleccione una opción de Configurar BD:" opcionConfigBD
+			case $opcionConfigBD in 
+				1) 
+				source .Datos/conectarBD.sh	
 				;;
+				2)
+				operador
+				echo -e "Volviendo a operador"
+				;;
+			esac
 			5) salir
 				;;
 		*) echo Opción Incorrecta 
@@ -206,6 +223,34 @@ do
 		2) logs
 		;;
 		3) #backUp
+		backup
+		read -p "Seleccione una opción de Back Up: " opcionBackUp
+		case $opcionBackUp in 
+			1) 
+			clear
+			#Definicion de archivos a respaldar
+			;;
+			2)
+			read -p "Base de datos que desea respaldar: " base
+
+
+
+			;;
+			3)
+			mkdir /etc/sysconfig/network-scripts/BackUp-SCI-ens33 
+			cp /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/BackUp-SCI-ens33  
+			gzip /etc/sysconfig/network-scripts/BackUp-SCI-ens33
+			mkdir /bkp/bkp-ens33
+			mv /etc/sysconfig/network-scripts/BackUp-SCI-ens33.gz /bkp/bkp-ens33
+			;;
+			4)
+			mkdir /bkp/bkp-SCI
+			tar cvfz /bkp/bkp-SCI-$(date +%Y-%m-%d).tar.gz /home/admin/Operador
+			;;
+			*)
+			echo No se ha seleccionado ninguna de las opciones anteriores
+			;; 
+		esac	
 		   
 		;;
 		0) 	
