@@ -27,11 +27,11 @@ function logs()
 function backup()
 {
 	echo "Bienvenido al Menú de Back Up"
-	echo "1- Back Up Archivos"
-	echo "2-Back Up Base de Datos"   
-	echo "3-Back Up Configuración de Red" #Hecho
-	echo "4-Back Up Operador" #Hecho
-
+	echo "1- Back Up Manual de Archivos"
+	echo "2-Back Up Manual de la Base de Datos"   
+	echo "3-Back Up Manual de la Configuración de Red" #Hecho
+	echo "4-Back Up Manual del Operador" #Hecho
+	echo "5-Back Up Automatizado"
 }
 
 operador
@@ -231,10 +231,17 @@ do
 			#Definicion de archivos a respaldar
 			;;
 			2)
-			read -p "Base de datos que desea respaldar: " base
-
-
-
+			read -p "Base de datos que desea respaldar: " BD
+			read -p "Nombre del archivo donde desea guardar la base de datos:" nombreDump
+			if [ -d /var/lib/mysql/$BD ];
+			then
+				mysqldump -u root -padmin.root $BD > $nombreDump
+				gzip /var/lib.mysql/$BD/$nombreDump
+				mkdir /bkp/bkp-mysqlDump
+				mv /var/lib.mysql/$BD/$nombreDump.gz /bkp/bkp-mysqlDump  
+			else
+				echo "La base de datos que usted escribió no existe o cambio su nombre"
+			fi	
 			;;
 			3)
 			mkdir /etc/sysconfig/network-scripts/BackUp-SCI-ens33 
@@ -246,6 +253,15 @@ do
 			4)
 			mkdir /bkp/bkp-SCI
 			tar cvfz /bkp/bkp-SCI-$(date +%Y-%m-%d).tar.gz /home/admin/Operador
+			;;
+			5)
+			
+			;;  
+			6)
+			backup
+			;;
+			0)
+			operador
 			;;
 			*)
 			echo No se ha seleccionado ninguna de las opciones anteriores
