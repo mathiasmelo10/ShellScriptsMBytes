@@ -4,8 +4,7 @@ function operador()
 	echo "Bienvenido al Operador del Sistema de Chat Institucional MBytes"
 	echo "1-Gestión"
 	echo "2-Logs"
-	echo "3-Back Up"
-	echo "4-Configurar BD" 
+	echo "3-Back Up" 
 	echo "0-Salir"
 }
 
@@ -26,7 +25,7 @@ function logs()
 
 function backup()
 {
-	
+	sh /BackUp/backUp.sh	
 }
 
 operador
@@ -157,70 +156,79 @@ do
 			case $opcionModificacion in
 				1) clear
 			   	sh Modificacion/modificacionUsuarios.sh
-			   		 				;;
+			   	;;
 				2) clear
 			   	sh Modificacion/modificacionMaterias.sh
-			   						;;
+			   	;;
 				3) clear
 			   	sh Modificacion/modificacionGrupos.sh
-			   						;;
+			   	;;
 				4) gestion
-				        			;;
+				;;
 				5) clear
 			   	operador
-			                		;;
+			    ;;
 				0) 	
 				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
-				case $opcionSalir in 
-					s)
-					break
-					;;
-					S)
-					break
-					;;
-					n)
-					echo Hola de nuevo!
-					operador
-					;;
-					N)
-					echo Hola de nuevo!
-					operador
-					;;
-					*)
-					echo No se ha seleccionado ninguna de las opciones anteriores
-					;;
-				esac
+					case $opcionSalir in 
+						s)
+						break
+						;;
+						S)
+						break
+						;;
+						n)
+						echo Hola de nuevo!
+						operador
+						;;
+						N)
+						echo Hola de nuevo!
+						operador
+						;;
+						*)
+						echo No se ha seleccionado ninguna de las opciones anteriores
+						;;
+					esac
 				;;
 		        *) echo Opción Incorrecta
-				        			;;
+				;;
 			esac
 			;;
 			4)
-			clear
-			echo "1-Insertar parámetros de la Base de Datos."
-			echo "2-Volver al Operador."
-			read -p "Seleccione una opción de Configurar BD:" opcionConfigBD
-			case $opcionConfigBD in 
-				1) 
-				source .Datos/conectarBD.sh	
-				;;
-				2)
-				operador
-				echo -e "Volviendo a operador"
-				;;
-			esac
-			5) salir
-				;;
-		*) echo Opción Incorrecta 
+			operador
+			;;
+			0) 	
+				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
+					case $opcionSalir in 
+						s)
+						break
+						;;
+						S)
+						break
+						;;
+						n)
+						echo Hola de nuevo!
+						operador
+						;;
+						N)
+						echo Hola de nuevo!
+						operador
+						;;
+						*)
+						echo No se ha seleccionado ninguna de las opciones anteriores
+						;;
+					esac
+			;;
+			*) 
+				echo Opción Incorrecta 
 			;;
 		esac	
 		;;
 		2) 
-		logs
+			logs
 		;;
 		3) 
-		#backUp
-		backup   
+			backup   
 		;;
 		0) 	
 			read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir

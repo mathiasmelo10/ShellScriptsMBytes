@@ -1,11 +1,11 @@
 function backup()
 {
 	echo "Bienvenido al Menú de Back Up"
-	echo "1- Back Up Manual de Archivos"
-	echo "2-Back Up Manual de la Base de Datos"   
-	echo "3-Back Up Manual de la Configuración de Red" #Hecho
-	echo "4-Back Up Manual del Operador" #Hecho
-	echo "5-Back Up Automatizado"
+	echo "1- Back Up de Archivos"
+	echo "2-Back Up de la Base de Datos"   
+	echo "3-Back Up de la Configuración de Red" #Hecho
+	echo "4-Back Up del Operador" #Hecho
+	echo "5-Volver a Menú Operador"
 }
 backup
 
@@ -16,16 +16,7 @@ read -p "Seleccione una opción de Back Up: " opcionBackUp
 			#Definicion de archivos a respaldar
 			;;
 			2)
-			read -p "Base de datos que desea respaldar: " BD
-			read -p "Nombre del archivo donde desea guardar la base de datos:" nombreDump
-			if [ -d /var/lib/mysql/$BD ];
-			then
-				mysqldump -u root -padmin.root $BD > $nombreDump
-				gzip /var/lib.mysql/$BD/$nombreDump
-				mv /var/lib.mysql/$BD/$nombreDump.gz /bkp/bkp-mysqlDump  
-			else
-				echo "La base de datos que usted escribió no existe o cambio su nombre"
-			fi	
+			sh backUpBD.sh
 			;;
 			3)
 			mkdir /etc/sysconfig/network-scripts/BackUp-SCI-ens33 
@@ -38,13 +29,29 @@ read -p "Seleccione una opción de Back Up: " opcionBackUp
 			tar cvfz /bkp/bkp-SCI-$(date +%Y-%m-%d).tar.gz /home/admin/Operador
 			;;
 			5)
-			#Automatizado
-			;;  
-			6)
-			backup
+			operador
 			;;
 			0)
-			operador
+			read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
+				case $opcionSalir in 
+					s)
+					break
+					;;
+					S)
+					break
+					;;
+					n)
+					echo Hola de nuevo!
+					operador
+					;;
+					N)
+					echo Hola de nuevo!
+					operador
+					;;
+					*)
+					echo No se ha seleccionado ninguna de las opciones anteriores
+					;;
+				esac
 			;;
 			*)
 			echo No se ha seleccionado ninguna de las opciones anteriores

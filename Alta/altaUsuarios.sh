@@ -26,6 +26,6 @@ echo "+==================================================================+"
 }
 userInformation 
 # Sentencia Sql para que la muestre
-mysql -h $host -u $user -p$password -D $database -s -e "INSERT INTO users(User_Login,User_Password) VALUES ($userName,$userPassword);"
-mysql -h $host -u $user -p$password -D $database -s -e "INSERT INTO persons(CI,Firt_Name,Second_Name,First_Surname,Second_Surname,Nick_Name) VALUES ($ci,$firstName,$secondName,$firstSurname,$secondSurname,$nickName);"
+mysql -h 192.168.0.30 -P33810 -u administrator -padministrator -D prueba_proyecto -s -e "INSERT INTO users(User_Login,User_Password) VALUES ($userName,$userPassword);"
+mysql -h 192.168.0.30 -P33810 -u administrator -padministrator -D prueba_proyecto -s -e "INSERT INTO persons(CI,Firt_Name,Second_Name,First_Surname,Second_Surname,Nick_Name) VALUES ($ci,$firstName,$secondName,$firstSurname,$secondSurname,$nickName);"
 
