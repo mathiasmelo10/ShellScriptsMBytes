@@ -1,3 +1,4 @@
+#!/bin/bash
 function backup()
 {
 	echo "Bienvenido al Menú de Back Up"
@@ -16,20 +17,16 @@ read -p "Seleccione una opción de Back Up: " opcionBackUp
 			#Definicion de archivos a respaldar
 			;;
 			2)
-			sh backUpBD.sh
+			sh backUpBD/backUpBD.sh
 			;;
 			3)
-			mkdir /etc/sysconfig/network-scripts/BackUp-SCI-ens33 
-			cp /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/BackUp-SCI-ens33  
-			gzip /etc/sysconfig/network-scripts/BackUp-SCI-ens33
-			mv /etc/sysconfig/network-scripts/BackUp-SCI-ens33.gz /bkp/bkp-ens33
+			sh backUpEns33/backUpEns33.sh
 			;;
-			4)
-			mkdir /bkp/bkp-SCI
-			tar cvfz /bkp/bkp-SCI-$(date +%Y-%m-%d).tar.gz /home/admin/Operador
+			4) 
+			sh backUpOperador/backUpOperador.sh
 			;;
 			5)
-			operador
+			menuPrincipalOperador
 			;;
 			0)
 			read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -42,11 +39,11 @@ read -p "Seleccione una opción de Back Up: " opcionBackUp
 					;;
 					n)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					N)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					*)
 					echo No se ha seleccionado ninguna de las opciones anteriores

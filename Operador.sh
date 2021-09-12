@@ -1,5 +1,5 @@
 #!/bin/bash
-function operador()
+function menuPrincipalOperador()
 {
 	echo "Bienvenido al Operador del Sistema de Chat Institucional MBytes"
 	echo "1-Gestión"
@@ -8,7 +8,7 @@ function operador()
 	echo "0-Salir"
 }
 
-function gestion()
+function subMenuGestion()
 {
 	echo "1- Alta"
 	echo "2- Baja"
@@ -18,14 +18,47 @@ function gestion()
 }
 
 
-function logs()
+function subMenulogs()
 {
 	sh Logs/Logs.sh
 }
 
-function backup()
+function subMenubackup()
 {
 	sh /BackUp/backUp.sh	
+}
+
+function subMenualta()
+{
+	echo "Usted esta en ALTA"	
+	echo "1- Alta Usuarios"
+	echo "2- Alta Materias" 
+	echo "3- Alta Grupos"
+	echo "4-Volver a Menú de Gestión"
+	echo "5- Volver a Menú Operador"
+	echo "0- Salir del Operador"
+}
+
+function subMenubaja()
+{
+	echo "Usted está en BAJA"
+	echo "1- Baja Usuarios"
+	echo "2- Baja Materias"
+	echo "3- Baja Grupos"
+	echo "4- Volver a Menú Gestión"
+	echo "5- Volver a Menú Operador"
+	echo "0- Salir del Operador"
+}
+
+function subMenuModificacion()
+{
+	echo "Usted está en MODIFICACIÓN"
+	echo "1- Modicación Usuarios"
+	echo "2- Modifación Materias"
+	echo "3- Modificación Grupos"
+	echo "4- Volver a Menú Gestión"
+	echo "5- Volver a Menú Operador"
+	echo "0- Salir del Operador"
 }
 
 operador
@@ -38,13 +71,7 @@ do
 			case $opcionGestion in
 				1)
 				clear	
-				echo Usted esta en ALTA	
-				echo 1- Alta Usuarios
-				echo 2- Alta Materias 
-				echo 3- Alta Grupos
-				echo 4-Volver a Menú de Gestión
-				echo 5- Volver a Menú Operador
-				echo 0- Salir del Operador
+				subMenualta
 				read  -p "Seleccione una opción de Alta: " opcionAlta
 			case $opcionAlta in
 				1) clear
@@ -57,10 +84,10 @@ do
 			   		sh Alta/altaGrupos.sh
 								;;
 				4) clear
-			   		gestion	
+			   		subMenuGestion	
 			   					;;
 				5)clear
-			  		operador
+			  		menuPrincipalOperador
 			  					;;
 				0)	
 				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -73,11 +100,11 @@ do
 					;;
 					n)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					N)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					*)
 					echo No se ha seleccionado ninguna de las opciones anteriores
@@ -91,13 +118,7 @@ do
 			;;
 			2)
 			clear
-			echo Usted está en BAJA
-			echo 1- Baja Usuarios
-			echo 2- Baja Materias
-			echo 3- Baja Grupos
-			echo 4- Volver a Menú Gestión
-			echo 5- Volver a Menú Operador
-			echo 0- Salir del Operador
+			subMenubaja
 			read  -p "Seleccione una opción de Baja: " opcionBaja
 			case $opcionBaja in
 				1)clear
@@ -110,10 +131,10 @@ do
 			   		sh Baja/bajaGrupos.sh
 			   				;;
 				4) 
-			   		gestion
+			   		subMenuGestion
 			   				;;
 				5) clear
-			    	operador
+			    	menuPrincipalOperador
 			    			;;
 				0)	
 				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -126,11 +147,11 @@ do
 					;;
 					n)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					N)
 					echo Hola de nuevo!
-					operador
+					menuPrincipalOperador
 					;;
 					*)
 					echo No se ha seleccionado ninguna de las opciones anteriores
@@ -145,13 +166,7 @@ do
 			;;
 			3)
 			clear
-			echo Usted está en MODIFICACIÓN
-			echo 1- Modicación Usuarios
-			echo 2- Modifación Materias
-			echo 3- Modificación Grupos
-			echo 4- Volver a Menú Gestión
-			echo 5- Volver a Menú Operador
-			echo 0- Salir del Operador
+			subMenuModificacion
 			read  -p "Seleccione una opción del Modicación: " opcionModificacion
 			case $opcionModificacion in
 				1) clear
@@ -163,10 +178,11 @@ do
 				3) clear
 			   	sh Modificacion/modificacionGrupos.sh
 			   	;;
-				4) gestion
+				4) 
+				subMenuGestion
 				;;
 				5) clear
-			   	operador
+			   	menuPrincipalOperador
 			    ;;
 				0) 	
 				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -179,11 +195,11 @@ do
 						;;
 						n)
 						echo Hola de nuevo!
-						operador
+						menuPrincipalOperador
 						;;
 						N)
 						echo Hola de nuevo!
-						operador
+						menuPrincipalOperador
 						;;
 						*)
 						echo No se ha seleccionado ninguna de las opciones anteriores
@@ -195,7 +211,7 @@ do
 			esac
 			;;
 			4)
-			operador
+			menuPrincipalOperador
 			;;
 			0) 	
 				read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -208,11 +224,11 @@ do
 						;;
 						n)
 						echo Hola de nuevo!
-						operador
+						menuPrincipalOperador
 						;;
 						N)
 						echo Hola de nuevo!
-						operador
+						menuPrincipalOperador
 						;;
 						*)
 						echo No se ha seleccionado ninguna de las opciones anteriores
@@ -225,10 +241,10 @@ do
 		esac	
 		;;
 		2) 
-			logs
+			subMenulogs
 		;;
 		3) 
-			backup   
+			subMenubackup
 		;;
 		0) 	
 			read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
@@ -241,11 +257,11 @@ do
 				;;
 				n)
 				echo Hola de nuevo!
-				operador
+				menuPrincipalOperador
 				;;
 				N)
 				echo Hola de nuevo!
-				operador
+				menuPrincipalOperador
 				;;
 				*)
 				echo No se ha seleccionado ninguna de las opciones anteriores

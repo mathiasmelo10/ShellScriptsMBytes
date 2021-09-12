@@ -1,8 +1,11 @@
+#!/bin/bash
 function backUpBD ()
 {
 	echo "Bienvido al BackUp de la Base de Datos"
 	echo "1- BackUp Manual de la Base de Datos"
 	echo "2 - BackUp Automatizado de la Base de Datos"
+	echo "3 - Volver al menú Operador"
+	echo "0 - Salir del Operador"
 }
 
 
@@ -22,7 +25,35 @@ case $opcionBackUpBD in
 			fi	
 	;;
 	2) 
-		sh dump.sh
+		sh /backUpBD/rsyncDump.sh
 
+	;;
+	3)
+	menuPrincipalOperador
+	;;
+	0)
+	read -p "Esta seguro que desea salir del operador ? s/S = SI | n/N = NO " opcionSalir
+				case $opcionSalir in 
+					s)
+					break
+					;;
+					S)
+					break
+					;;
+					n)
+					echo Hola de nuevo!
+					menuPrincipalOperador
+					;;
+					N)
+					echo Hola de nuevo!
+					menuPrincipalOperador
+					;;
+					*)
+					echo No se ha seleccionado ninguna de las opciones anteriores
+					;;
+				esac
+	;;
+	*)
+		echo "Selección del menu BackUp Base de Datos Incorrecta!!"
 	;;
 esac		
