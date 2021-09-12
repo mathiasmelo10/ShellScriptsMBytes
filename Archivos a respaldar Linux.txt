@@ -1,0 +1,56 @@
+Archivos a respaldar:
+
+/etc/passwd
+
+/home
+
+/etc/gpasswd
+
+/etc/group
+
+etc/gshadow
+
+etc/sysconfig/network-scripts/icfg-ens33
+
+/etc/ssh/sshd
+
+/home/admin/Operador
+
+/etc/squid
+
+/var/lib/mysql
+
+/var/lib.mysql/$BD/$nombreDump
+
+Directorio Zimbra
+
+/etc/shadow
+
+/etc/init.d/iptables
+
+/etc/sysconfig/iptables
+
+/sbin/iptables
+
+/var/logs/cron
+
+/var/log/secure (auntenticaciones)
+
+/var/log/messages (mensajes del sistema) 
+
+/var/log/wtmp (guarda las sesiones) - comando last
+
+Respaldo TOTAL (Guarda TODO)
+
+Sabado / 23:50hs / Se guarda un archivo con el nombre backUpSemanal y la fecha.
+
+Respaldo Parcial (Solo guarda los cambios realizados en los archivos)
+
+Domingo a Viernes / 23:50hs / Se guardan los ultimos tres archivos de backUpParcial (Primero verifica si ya existe el archivo con ese mismo nombre,si no existe lo respalda pero si ya existe, al existente le agrega un numero 1, si ya existe un backUpParcial1 le cambia el nombre a backUpParcial2 y si ya existe un backUpParcial2 lo elimina).
+
+Respaldo de BD 
+
+Diario se guardan los ultimos 7 backUps
+
+
+
