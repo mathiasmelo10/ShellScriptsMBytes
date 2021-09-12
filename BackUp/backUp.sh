@@ -13,8 +13,7 @@ backup
 read -p "Seleccione una opción de Back Up: " opcionBackUp
 		case $opcionBackUp in 
 			1) 
-			clear
-			#Definicion de archivos a respaldar
+			sh backUpAyDLinux/backUpAyDLinux.sh
 			;;
 			2)
 			sh backUpBD/backUpBD.sh
