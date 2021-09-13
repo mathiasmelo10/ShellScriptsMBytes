@@ -20,9 +20,9 @@ etc/sysconfig/network-scripts/icfg-ens33
 
 /var/lib/mysql
 
-/var/lib.mysql/$BD/$nombreDump
+/var/lib/mysql/$BD/$nombreDump
 
-Directorio Zimbra
+Directorio Zimbra #PENDIENTE 
 
 /etc/shadow
 
@@ -32,7 +32,7 @@ Directorio Zimbra
 
 /sbin/iptables
 
-/var/logs/cron  
+/var/log/cron  
 
 /var/log/secure (auntenticaciones)
 
