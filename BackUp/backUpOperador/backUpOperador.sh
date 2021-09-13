@@ -3,7 +3,7 @@ function backUpOperador()
 {
 	echo "Bienvido al BackUp del Operador"
 	echo "1- BackUp Manual del Operador"
-	echo "2 - BackUp Automatizado del Operador"
+	echo "2 - BackUp Parcial del Operador"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }
@@ -14,7 +14,7 @@ case $opcionBackUpOperador in
 	1)
 	tar cvfz /bkp/bkp-SCI-$(date +%Y-%m-%d).tar.gz /home/admin/Operador
 	mv /home/admin/Operador /bkp/bkp-Operador
-	echo "Back Up Manual del Operador realizado con éxito !!"
+	echo "Back Up Parcial del Operador realizado con éxito !!"
 	;;
 	2)
 	sh backUpOperador/rsyncOperador.sh

@@ -32,7 +32,7 @@ Directorio Zimbra
 
 /sbin/iptables
 
-/var/logs/cron
+/var/logs/cron  
 
 /var/log/secure (auntenticaciones)
 
