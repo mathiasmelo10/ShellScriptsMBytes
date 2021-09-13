@@ -1,54 +1,54 @@
 Archivos a respaldar:
 
-/etc/passwd
+/etc/passwd #Hecho
 
-/home
+/home #Hecho
 
-/etc/gpasswd
+/etc/gpasswd #Hecho
 
-/etc/group
+/etc/group #Hecho
 
-etc/gshadow
+etc/gshadow #Hecho
 
-etc/sysconfig/network-scripts/icfg-ens33
+etc/sysconfig/network-scripts/icfg-ens33 #Hecho
 
-/etc/ssh/sshd
+/etc/ssh/sshd #Hecho
 
-/home/admin/Operador
+/home/admin/Operador #Hecho
+ 
+/etc/squid  #Hecho
 
-/etc/squid
+/var/lib/mysql #Hecho
 
-/var/lib/mysql
-
-/var/lib/mysql/$BD/$nombreDump
+/var/lib/mysql/$BD/$nombreDump #Hecho
 
 Directorio Zimbra #PENDIENTE 
 
-/etc/shadow
+/etc/shadow #Hecho
 
-/etc/init.d/iptables
+/etc/init.d/iptables #Hecho
 
-/etc/sysconfig/iptables
+/etc/sysconfig/iptables #Hecho
 
-/sbin/iptables
+/sbin/iptables #Hecho
 
-/var/log/cron  
+/var/log/cron  #Hecho
 
-/var/log/secure (auntenticaciones)
+/var/log/secure (auntenticaciones) #Hecho
 
-/var/log/messages (mensajes del sistema) 
+/var/log/messages (mensajes del sistema) #Hecho 
 
-/var/log/wtmp (guarda las sesiones) - comando last
+/var/log/wtmp (guarda las sesiones) - comando last #Hecho
 
-Respaldo TOTAL (Guarda TODO)
-
+Respaldo TOTAL (Guarda TODO) #Script realizado queda configurar CRONTAB
+ 
 Sabado / 23:50hs / Se guarda un archivo con el nombre backUpSemanal y la fecha.
 
-Respaldo Parcial (Solo guarda los cambios realizados en los archivos)
+Respaldo Parcial (Solo guarda los cambios realizados en los archivos) #Script realizado queda configurar CRONTAB
 
 Domingo a Viernes / 23:50hs / Se guardan los ultimos tres archivos de backUpParcial (Primero verifica si ya existe el archivo con ese mismo nombre,si no existe lo respalda pero si ya existe, al existente le agrega un numero 1, si ya existe un backUpParcial1 le cambia el nombre a backUpParcial2 y si ya existe un backUpParcial2 lo elimina).
 
-Respaldo de BD 
+Respaldo de BD #Script realizado queda configurar CRONTAB
 
 Diario se guardan los ultimos 7 backUps
 
