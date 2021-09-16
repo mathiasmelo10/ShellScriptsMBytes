@@ -1,34 +1,30 @@
-#!/bin/bash
-menuPrincipalOperador()
-{
-	echo -e "\n***Bienvenido al Operador del Sistema de Chat Institucional MBytes***" 
-	echo -e "\n1. Gestión" 
-	echo -e "\n2. Logs" 
-	echo -e "\n3. Back Up" 
-	echo -e "\n0. Salir"
+#! /bin/bash
+function menuPrincipalOperador{
+	echo Bienvenido al Operador del Sistema de Chat Institucional MBytes 
+	echo 1-Gestión 
+	echo 2-Logs 
+	echo 3-Back Up 
+	echo 0-Salir
 }
 
-subMenuGestion()
-{
-	echo "1-Alta"
-	echo "2-Baja"
-	echo "3-Modificación"
-	echo "4-Volver a Menú Operador"
-	echo "0-Salir del Operador"
+function subMenuGestion{
+	echo 1-Alta
+	echo 2-Baja
+	echo 3-Modificación
+	echo 4-Volver a Menú Operador
+	echo 0-Salir del Operador
 }
 
 
-subMenulogs()
-{
+function subMenulogs{
 	sh Logs/Logs.sh
 }
 
-subMenubackup()
-{
+function subMenubackup{
 	sh /BackUp/backUp.sh	
 }
 
-subMenualta(){
+function subMenualta{
 	echo "Usted esta en ALTA"	
 	echo "1- Alta Usuarios"
 	echo "2- Alta Materias" 
@@ -38,7 +34,7 @@ subMenualta(){
 	echo "0- Salir del Operador"
 }
 
-subMenubaja(){
+function subMenubaja{
 	echo "Usted está en BAJA"
 	echo "1- Baja Usuarios"
 	echo "2- Baja Materias"
@@ -48,7 +44,7 @@ subMenubaja(){
 	echo "0- Salir del Operador"
 }
 
-subMenuModificacion(){
+functionsubMenuModificacion{
 	echo "Usted está en MODIFICACIÓN"
 	echo "1- Modicación Usuarios"
 	echo "2- Modifación Materias"
@@ -58,12 +54,12 @@ subMenuModificacion(){
 	echo "0- Salir del Operador"
 }
 
-menuPrincipalOperador
+operador
 while true
 do
 	read -p "Seleccione una opción de Operador: " opcion
 	case $opcion in
-		1) subMenuGestion
+		1) gestion
 			read -p "Seleccione una opción de Gestión: " opcionGestion
 			case $opcionGestion in
 				1)

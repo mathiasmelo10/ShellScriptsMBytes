@@ -1,14 +1,14 @@
 #!/bin/bash
-function backUpAyDLinux()
+backUpAyDLinux()
 {
 	echo "Bienvenido al BackUp de los Archivos y Directorios de Linux"
 	echo "1- BackUp Manual de los Archivos y Directorios de Linux "
-	echo "2 - BackUp Parcial de los Archivos y Directorios de Linux"
+	echo "2 - Sincronizar cambios de los Archivos y Directorios de Linux"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }
 
-function backUpAyDManual()
+backUpAyDManual()
 {
 	echo "***SUB MENÚ MANUAL ASISTIDO***"
 	echo "1-BACK UP MANUAL ASISTIDO -- Archivo passwd"

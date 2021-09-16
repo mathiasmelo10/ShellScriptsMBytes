@@ -1,9 +1,9 @@
 #!/bin/bash
-function backUpOperador()
+backUpOperador()
 {
 	echo "Bienvido al BackUp del Operador"
-	echo "1- BackUp Manual del Operador"
-	echo "2 - BackUp Parcial del Operador"
+	echo "1- BackUp del Operador"
+	echo "2 - Sincronizar cambios del Operador"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }

@@ -1,9 +1,9 @@
 #!/bin/bash
-function backUpBD ()
+backUpBD()
 {
 	echo "Bienvido al BackUp de la Base de Datos"
-	echo "1- BackUp Manual de la Base de Datos"
-	echo "2 - BackUp Automatizado de la Base de Datos"
+	echo "1- BackUp de la Base de Datos"
+	echo "2 - Sincronizar cambios de la Base de Datos"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }
@@ -41,11 +41,11 @@ case $opcionBackUpBD in
 					break
 					;;
 					n)
-					echo Hola de nuevo!
+					echo "Hola de nuevo!"
 					menuPrincipalOperador
 					;;
 					N)
-					echo Hola de nuevo!
+					echo "Hola de nuevo!"
 					menuPrincipalOperador
 					;;
 					*)

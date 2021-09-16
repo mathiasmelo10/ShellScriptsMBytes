@@ -5,7 +5,7 @@
 		#Backup del Script rsyncDump.sh
 		cp /home/admin/Operador/BackUp/rsyncDump.sh /home/admin/Operador/BackUp/rsyncDump1.sh 
 		mv /home/admin/Operador/BackUp/rsyncDump1.sh /bkp/bkp-mysqlDump
-		echo "BackUp Parcial de la Base de Datos realizado con éxito!"
+		echo "Cambios sincronizados de la Base de Datos realizado con éxito!"
 		#rsync opciones: 
 		#-a Puede unirse con muchos otros comandos.
 		# Eso significa que no solo copia los archivos, sino que también copia los permisos,

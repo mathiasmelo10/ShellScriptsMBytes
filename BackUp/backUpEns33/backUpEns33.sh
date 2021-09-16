@@ -1,9 +1,9 @@
 #!/bin/bash
-function backUpEns33()
+backUpEns33()
 {
 	echo "Bienvido al BackUp de la Configuración de Red"
 	echo "1- BackUp Manual de la Configuración de Red"
-	echo "2 - BackUp Parcial de la Configuración de Red"
+	echo "2 - Sincronizar cambios de la Configuración de Red"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }

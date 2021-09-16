@@ -1,3 +1,3 @@
 #!/bin/bash
 rsync -avh /home/admin/Operador /bkp/bkp-Operador
-echo "BackUp Parcial del Operador realizado con éxito!"
+echo "Cambios sincronizados del Operador realizado con éxito!"
