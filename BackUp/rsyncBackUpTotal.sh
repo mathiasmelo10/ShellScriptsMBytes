@@ -79,12 +79,19 @@ mv /bkp/bkpAyDLinux/bkpIptablesBinIncremental1 /bkp/bkpAyDLinux/bkpIptablesBinIn
 mv /bkp/bkpAyDLinux/bkpIptablesBinIncremental /bkp/bkpAyDLinux/bkpIptablesBinIncremental1 
 rsync -avh /sbin/iptables /bkp/bkpAyDLinux/bkpIptablesBinIncremental
 
-#Configuraciones de crontab
+#Configuraciones de LOGS DE CRON
 cp /var/log/cron /var/log/cronIncremental
 rm /bkp/bkpAyDLinux/bkpCronIncremental2
 mv /bkp/bkpAyDLinux/bkpCronIncremental1 /bkp/bkpAyDLinux/bkpCronIncremental2
 mv /bkp/bkpAyDLinux/bkpCronIncremental /bkp/bkpAyDLinux/bkpCronIncremental1
 rsync -avh /var/log/cronIncremental /bkp/bkpAyDLinux/bkpCronIncremental
+
+#Configuracion de CRONTAB
+cp /etc/crontab /etc/crontabIncremental
+rm /bkp/bkpAyDLinux/bkpCRONTABIncremental2
+mv /bkp/bkpAyDLinux/bkpCRONTABIncremental1 /bkp/bkpAyDLinux/bkpCRONTABIncremental2
+mv /bkp/bkpAyDLinux/bkpCRONTABIncremental /bkp/bkpAyDLinux/bkpCRONTABIncremental1
+rsync -avh /etc/crontabIncremental /bkp/bkpAyDLinux/bkpCRONTABIncremental
 
 #Autenticaciones
 cp /var/log/secure /var/log/secureIncremental
