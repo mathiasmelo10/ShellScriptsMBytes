@@ -1,0 +1,56 @@
+Archivos a respaldar:
+
+/etc/passwd #Hecho
+
+/home #Hecho
+
+/etc/gpasswd #Hecho
+
+/etc/group #Hecho
+
+etc/gshadow #Hecho
+
+etc/sysconfig/network-scripts/icfg-ens33 #Hecho
+
+/etc/ssh/sshd #Hecho
+
+/home/admin/Operador #Hecho
+ 
+/etc/squid  #Hecho
+
+/var/lib/mysql #Hecho
+
+/var/lib/mysql/$BD/$nombreDump #Hecho
+
+Directorio Zimbra #PENDIENTE 
+
+/etc/shadow #Hecho
+
+/etc/init.d/iptables #Hecho
+
+/etc/sysconfig/iptables #Hecho
+
+/sbin/iptables #Hecho
+
+/var/log/cron  #Hecho
+
+/var/log/secure (auntenticaciones) #Hecho
+
+/var/log/messages (mensajes del sistema) #Hecho 
+
+/var/log/wtmp (guarda las sesiones) - comando last #Hecho
+
+Respaldo TOTAL (Guarda TODO) #Script realizado queda configurar CRONTAB
+ 
+Sabado / 23:50hs / Se guarda un archivo con el nombre backUpSemanal y la fecha.
+
+Respaldo Parcial (Solo guarda los cambios realizados en los archivos) #Script realizado queda configurar CRONTAB
+
+Domingo a Viernes / 23:50hs / Se guardan los ultimos tres archivos de backUpParcial (Primero verifica si ya existe el archivo con ese mismo nombre,si no existe lo respalda pero si ya existe, al existente le agrega un numero 1, si ya existe un backUpParcial1 le cambia el nombre a backUpParcial2 y si ya existe un backUpParcial2 lo elimina).
+
+Respaldo de BD #Script realizado queda configurar CRONTAB
+
+Diario se guardan los ultimos 7 backUps
+
+
+
