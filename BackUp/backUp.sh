@@ -1,20 +1,20 @@
 #!/bin/bash
-function backup()
+backup()
 {
 	echo "Bienvenido al Menú de Back Up"
 	echo "1- Back Up de Archivos"
 	echo "2-Back Up de la Base de Datos"   
 	echo "3-Back Up de la Configuración de Red" #Hecho
-	echo "4-Back Up del Operador" #Hecho
-	echo "5-Volver a Menú Operador"
+	echo "4-Back Up Total" #Hecho
+	echo "5-Volver a Menu BackUp"
+	echo "6-Volver a Menu Operador"
 }
 backup
 
 read -p "Seleccione una opción de Back Up: " opcionBackUp
 		case $opcionBackUp in 
 			1) 
-			clear
-			#Definicion de archivos a respaldar
+			sh backUpAyDLinux/backUpAyDLinux.sh
 			;;
 			2)
 			sh backUpBD/backUpBD.sh
@@ -22,10 +22,13 @@ read -p "Seleccione una opción de Back Up: " opcionBackUp
 			3)
 			sh backUpEns33/backUpEns33.sh
 			;;
-			4) 
+			4)
+			sh BackUp/crontabBackUpTotal.sh
+			;;
+			5) 
 			sh backUpOperador/backUpOperador.sh
 			;;
-			5)
+			6)
 			menuPrincipalOperador
 			;;
 			0)

@@ -1,21 +1,21 @@
 #!/bin/bash
-function backUpEns33()
+backUpEns33()
 {
 	echo "Bienvido al BackUp de la Configuración de Red"
 	echo "1- BackUp Manual de la Configuración de Red"
-	echo "2 - BackUp Automatizado de la Configuración de Red"
+	echo "2 - Sincronizar cambios de la Configuración de Red"
 	echo "3 - Volver al menú Operador"
 	echo "0 - Salir del Operador"
 }
 backUpEns33
 read -p "Seleccione una opción del menú BackUp de la Configuración de Red :" opcionBackUpCfgRed
 case $opcionBackUpCfgRed in 
-	1)
 	cp /etc/sysconfig/network-scripts/ifcfg-ens33 /etc/sysconfig/network-scripts/ifcfg-ens331
-	mv /etc/sysconfig/network-scripts/ifcfg-ens331 /etc/sysconfig/network-scripts/BackUp-SCI-ens33  
+	mv /etc/sysconfig/network-scripts/ifcfg-ens331
+	1) /etc/sysconfig/network-scripts/BackUp-SCI-ens33  
 	gzip /etc/sysconfig/network-scripts/BackUp-SCI-ens33
 	mv /etc/sysconfig/network-scripts/BackUp-SCI-ens33.gz /bkp/bkp-ens33
-	echo "Back Up Manual de la Configuración de Red realizado con éxito !!"
+	echo "Back Up Parcial de la Configuración de Red realizado con éxito !!"
 	;;
 	2)
 	sh backUpEns33/rsyncEns33.sh
