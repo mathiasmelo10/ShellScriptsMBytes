@@ -90,7 +90,7 @@ read -p "Seleccione una opción del menú BackUp Parcial Archivos y Directorios 
 			mv /bkp/bkpAyDLinux/bkpMsyqlDirIncremental /bkp/bkpAyDLinux/bkpMysqlDirIncremental1
 			mv /bkp/bkpAyDLinux/bkpMsqlIncremental.tar.gz /bkp/bkpAyDLinux/bkpMysqlDirIncremental
 			tar -xvfz /bkp/bkpAyDLinux/bkpMysqlIncremental$(date +%Y-%m-%d).tar.gz /bkp/bkpAyDLinux/bkpMysqlDirIncremental
-			rsyn -avh /var/lib/mysql /bkp/bkpAyDLinux/bkpMsyqlDirIncremental
+			rsync -avh /var/lib/mysql /bkp/bkpAyDLinux/bkpMsyqlDirIncremental
 			echo "Cambios sincronizados de Directorio Mysql realizado con éxito!!"
 			;;
 			8)
