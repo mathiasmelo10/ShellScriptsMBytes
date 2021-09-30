@@ -1,4 +1,4 @@
-sh /Datos/conectarBD.sh
+#!/bin/bash
 modificarUsuario()
 {
 echo -e "+==================================================================+"
@@ -38,9 +38,7 @@ case $modifyOption in
 		mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD First Name: " oldFirstName
 		read -p "Write th NEW First Name: " newFirstName
-		mysql -h localhost -u root -padmiread -p "Write the OLD First Name: " oldFirstName
-		read -p "Write th NEW First Name: " newFirstName
-		mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Name='$newFirstName' WHERE First_Name='$oldFirstName';"n.root -D prueba_proyecto -s -e "UPDATE persons SET First_Name='$newFirstName' WHERE First_Name='$oldFirstName';"
+		mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Name='$newFirstName' WHERE First_Name='$oldFirstName';"
 	;;
 	4)
 		mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"

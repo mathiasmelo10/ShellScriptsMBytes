@@ -75,7 +75,7 @@ do
 			   	   	sh Alta/altaUsuarios.sh
 								;;
 				2) clear
-			   		sh Alta/altaMaterias.sh
+			   		sh Alta/altaOrientaciones.sh
 								;;
 				3) clear
 			   		sh Alta/altaGrupos.sh
@@ -122,7 +122,7 @@ do
 			  		sh Baja/bajaUsuarios.sh
 			  				;;
 				2) clear
-			   		sh Baja/bajaMaterias.sh
+			   		sh Baja/bajaOrientaciones.sh
 			   		;;
 				3) clear
 			   		sh Baja/bajaGrupos.sh
@@ -170,7 +170,7 @@ do
 			   	sh Modificacion/modificacionUsuarios.sh
 			   	;;
 				2) clear
-			   	sh Modificacion/modificacionMaterias.sh
+			   	sh Modificacion/modificacionOrientaciones.sh
 			   	;;
 				3) clear
 			   	sh Modificacion/modificacionGrupos.sh

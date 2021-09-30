@@ -1,9 +1,8 @@
-sh /Datos/conectarBD.sh
-
+#!/bin/bash
 eliminarUsuario()
 {
 echo -e "+==================================================================+"
-echo -e "+ Welcome to Users Delete                                          +"
+echo -e "+ Welcome to Remove Users                                           +"
 echo -e "+==================================================================+"
 read -p "Select the User ID : " userID  
 echo "+=====================================================================+"                                                                 
