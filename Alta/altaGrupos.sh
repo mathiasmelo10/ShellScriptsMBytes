@@ -3,10 +3,50 @@ groupsRegister(){
 echo -e "+==================================================================+"
 echo -e "+ Welcome to Groups Register                                        +"
 echo -e "+==================================================================+"
-read -p "Write a New Group: " newGroupName  
-read -p "Write the New Group's Shift : " newGroupShift 
-echo "+==================================================================+"
+echo -e "\n1- Insert New Group"   
+echo -e "\n2- Go back Operator menu"
+echo -e "\n0- Exit Operator"  
+echo -e "+==================================================================+"
 }
-mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM groups;"
 groupsRegister
-mysql -h localhost -u root -padmin.root -D prueba_proyecto -s -e "INSERT INTO groups(Name,Shift)VALUES('$courseName','$newGroupShift');"
+read -p "Insert Groups Register Option: " groupsRegisterOption
+case $groupsRegisterOption in
+ 1)
+    echo -e "+==================================================================+"
+    read -p "Write a New Group: " newGroupName  
+    read -p "Write the New Group's Shift : " newGroupShift 
+    echo -e "+==================================================================+"
+    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM groups;"
+    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "INSERT INTO groups(Name,Shift)VALUES('$courseName','$newGroupShift');"
+ ;;
+ 2)
+    clear
+    sh /home/admin/ShellScriptsMBytes/operador.sh
+ ;;
+  0)
+	read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
+		case $opcionSalir in 
+			y)
+			break
+			;;
+			Y)
+			break
+			;;
+			n)
+			echo -e "Hi again!"
+			sh /home/admin/ShellScriptsMBytes/operador.sh
+			;;
+			N)
+			echo -e "Hi again!"
+			sh /home/admin/ShellScriptsMBytes/operador.sh
+			;;
+			*)
+			echo -e "The last options never were selected" 
+			;;
+		esac
+		;;	
+ ;;
+ *)
+	 echo -e "Incorrect Option" 
+ ;;
+esac
