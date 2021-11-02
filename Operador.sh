@@ -237,7 +237,7 @@ esac
 				;;
 			esac
 			;;	
-		;;
+		
  		*)
 			echo -e "Incorrect Option" 
 			;;
