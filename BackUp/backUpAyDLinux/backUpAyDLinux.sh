@@ -187,7 +187,7 @@ case $opcionAyDLinux in
 	sh rsyncAyDLinux.sh
 	;;
 	3)
-	operador
+	menuPrincipalOperador
 	echo "Volviendo al Operador"
 	;;
 	0)
