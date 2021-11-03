@@ -21,50 +21,50 @@ modificarUsuario
 
 case $modifyOption in 
 	1)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM users;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM users;"
 		read -p "Write the OLD User Name: " oldUserName
 		read -p "Write the NEW User Name: " newUserName
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE users SET User_Login='$newUserName' WHERE User_Login ='$oldUserName';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE users SET User_Login='$newUserName' WHERE User_Login ='$oldUserName';"
 		modificarUsuario
 
 	;;
 	2)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD First Name: " oldFirstName
 		read -p "Write th NEW First Name: " newFirstName
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Name='$newFirstName' WHERE First_Name='$oldFirstName';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE persons SET First_Name='$newFirstName' WHERE First_Name='$oldFirstName';"
 		modificarUsuario
 
 	;;
 	3)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD Second Name: " oldSecondName
 		read -p "Write th NEW Second Name: " newSecondName
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET Second_Name='$newSecondName' WHERE Second_Name='$oldSecondName';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE persons SET Second_Name='$newSecondName' WHERE Second_Name='$oldSecondName';"
  		modificarUsuario
 
 	;;
 	4)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD First Surname: " oldFirstSurname
 		read -p "Write th NEW First Surname: " newFirstSurname
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Surname='$newFirstSurname' WHERE First_Surname='$oldFirstSurname';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE persons SET First_Surname='$newFirstSurname' WHERE First_Surname='$oldFirstSurname';"
 		modificarUsuario
 
 	;;
 	5)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD Second Surname: " oldSecondSurname
 		read -p "Write th NEW Second Surname: " newSecondSurname
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Surname='$newSecondSurname' WHERE First_Surname='$oldSecondSurname';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE persons SET First_Surname='$newSecondSurname' WHERE First_Surname='$oldSecondSurname';"
 		modificarUsuario
 
 	;;
 	6)
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM persons;"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM persons;"
 		read -p "Write the OLD Nick Name: " oldNickName
 		read -p "Write th NEW Nick Name: " newNickName
-		mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE persons SET First_Surname='$newNickName' WHERE First_Surname='$oldNickName';"
+		mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE persons SET First_Surname='$newNickName' WHERE First_Surname='$oldNickName';"
 		modificarUsuario
 
 	;;

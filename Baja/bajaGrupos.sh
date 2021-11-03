@@ -14,8 +14,8 @@ case $removeGroupsOption in
     echo -e "+==================================================================+"
     read -p "Select the group ID to be removed: " groupID 
     echo -e "+==================================================================+"
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM groups;"
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "DELETE FROM groups WHERE ID=$groupID;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM groups;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "DELETE FROM groups WHERE ID=$groupID;"
     ;;
     2)
     clear

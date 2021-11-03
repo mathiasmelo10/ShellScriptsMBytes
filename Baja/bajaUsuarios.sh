@@ -9,14 +9,14 @@ echo -e "\n2-Go back to Operator menu"
 echo -e "\n0-Exit Operator"
 echo "+=====================================================================+"
 }                                                                   
-mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM users;"
+mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM users;"
 eliminarUsuario
 read -p "Insert a option" removeOption
 case $removeOption in 
  1)
 	echo -e "+=====================================================================+"
 	read -p "Select the User ID : " userID
-	mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "DELETE FROM users WHERE ID=$userID;"
+	mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "DELETE FROM users WHERE ID=$userID;"
 	echo -e "+=====================================================================+"
  ;;
  2)

@@ -17,8 +17,8 @@ case $modifyGroupsOption in
     read -p "Select the group ID to be modified : " groupID  
     read -p "Write the NEW group : " newGroup
     echo "+=====================================================================+" 
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM groups;"
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "UPDATE groups SET Name='$newGroup' WHERE ID=$groupID;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM groups;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "UPDATE groups SET Name='$newGroup' WHERE ID=$groupID;"
     modifyGroups
  ;;
  2)

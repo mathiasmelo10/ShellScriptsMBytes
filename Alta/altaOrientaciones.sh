@@ -13,11 +13,11 @@ orientationRegister
 read -p "Insert a Orientation Register Option: " orientationRegisterOption
 case $orientationRegisterOption in 
     1)
-        mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM courses;"
+        mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM courses;"
         echo -e "+==================================================================+"
         read -p "Write a New Orientation Name: " newCourseName  
         echo -e "+==================================================================+"
-        mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "INSERT INTO courses(Name)VALUES('$newCourseName');"
+        mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "INSERT INTO courses(Name)VALUES('$newCourseName');"
         orientationRegister    
     ;;
     2)

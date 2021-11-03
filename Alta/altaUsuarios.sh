@@ -29,8 +29,8 @@ case $registerOption in
 	read -p "Write a Nick Name: " nickName
 	echo -e "+==================================================================+"
 	# Sentencia Sql para que la muestre
-	mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "INSERT INTO users(User_Login,User_Password)VALUES('$userName','cABhAHMAcwB3AG8AcgBkAA==');"
-	mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "INSERT INTO persons(CI,First_Name,Second_Name,First_Surname,Second_Surname,Nick_Name)VALUES('$ci','$firstName','$secondName','$firstSurname','$secondSurname','$nickName');"
+	mysql -h 192.168.0.7 -u leandro.tiscornia -p54388733 -D mbytes -s -e "INSERT INTO users(User_Login,User_Password)VALUES('$userName','cABhAHMAcwB3AG8AcgBkAA==');"
+	mysql -h 192.168.0.7 -u leandro.tiscornia -p54388733 -D mbytes -s -e "INSERT INTO persons(CI,First_Name,Second_Name,First_Surname,Second_Surname,Nick_Name)VALUES('$ci','$firstName','$secondName','$firstSurname','$secondSurname','$nickName');"
 	userRegister
  ;;
  2)

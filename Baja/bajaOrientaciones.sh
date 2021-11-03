@@ -15,8 +15,8 @@ case $removeOrientationOption in
     echo -e "+==================================================================+"
     read -p "Select the course ID to be removed: " courseID 
     echo -e "+==================================================================+"
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "SELECT * FROM courses;"
-    mysql -h 192.168.0.7 -u root -padmin.root -D prueba_proyecto -s -e "DELETE FROM courses WHERE ID=$courseID;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "SELECT * FROM courses;"
+    mysql -h 192.168.5.50 -u leandro.tiscornia -p54388733 -D mbytes -s -e "DELETE FROM courses WHERE ID=$courseID;"
  ;;
  2)
     clear
