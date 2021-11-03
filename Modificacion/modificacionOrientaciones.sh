@@ -50,7 +50,7 @@ case $modifyOrientationOption in
 			echo -e "The last options never were selected" 
 			;;
 		esac
-		;;	
+			
  ;;
  *)
 	 echo -e "Incorrect Option" 

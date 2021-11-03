@@ -71,55 +71,55 @@ do
 				clear	
 				subMenualta
 				read  -p "Select a Register Option: " opcionAlta
-			case $opcionAlta in
-				1) clear
-			   	   	sh Alta/altaUsuarios.sh
+				case $opcionAlta in
+					1) clear
+			   	   		sh Alta/altaUsuarios.sh
+					;;
+					2) clear
+			   			sh Alta/altaOrientaciones.sh
+					;;
+					3) clear
+			   			sh Alta/altaGrupos.sh
+					;;
+					4) clear
+			   			subMenuGestion	
+			   		;;
+					5)clear
+			  			menuPrincipalOperador
+			  		;;
+					0)	
+						read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
+							case $opcionSalir in 
+								y)
+								break
 								;;
-				2) clear
-			   		sh Alta/altaOrientaciones.sh
+								Y)
+								break
 								;;
-				3) clear
-			   		sh Alta/altaGrupos.sh
+								n)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
 								;;
-				4) clear
-			   		subMenuGestion	
-			   					;;
-				5)clear
-			  		menuPrincipalOperador
-			  					;;
-				0)	
-				read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
-				case $opcionSalir in 
-					y)
-					break
+								N)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
+								;;
+								*)
+								echo -e "The last options never were selected" 
+								;;
+							esac
 					;;
-					Y)
-					break
-					;;
-					n)
-					echo -e "Hi again!"
-					sh /home/admin/ShellScriptsMBytes/operador.sh
-					;;
-					N)
-					echo -e "Hi again!"
-					sh /home/admin/ShellScriptsMBytes/operador.sh
-					;;
-					*)
-					echo -e "The last options never were selected" 
-					;;
-				esac
-				;;
 			esac		
  		;;
  		*)
 	 	echo -e "Incorrect Option" 
  		;;
 	esac
-	;;
-			2)
-			clear
-			subMenubaja
-			read  -p "Select a Delete Option: " opcionBaja
+	
+		2)
+		clear
+		subMenubaja
+		read  -p "Select a Delete Option: " opcionBaja
 			case $opcionBaja in
 				1)clear
 			  		sh Baja/bajaUsuarios.sh
@@ -159,15 +159,15 @@ do
 					esac
 				;;
 			esac		
- 			;;
- 			*)
-	 		echo -e "Incorrect Option" 
- 			;;
-			esac
-			3)
-			clear
-			subMenuModificacion
-			read  -p "Select a Modify Option: " opcionModificacion
+ 		;;
+ 		*)
+	 	echo -e "Incorrect Option" 
+ 		;;
+	esac
+		3)
+		clear
+		subMenuModificacion
+		read  -p "Select a Modify Option: " opcionModificacion
 			case $opcionModificacion in
 				1) clear
 			   	sh Modificacion/modificacionUsuarios.sh
@@ -208,15 +208,15 @@ do
 				;;
 			esac		
  			;;
- *)
-	 echo -e "Incorrect Option" 
- ;;
-esac
-			4)
+ 		*)
+	 		echo -e "Incorrect Option" 
+ 		;;
+	esac
+		4)
 			menuPrincipalOperador
-			;;
-			0) 	
-			read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
+		;;
+		0) 	
+		read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
 			case $opcionSalir in 
 				y)
 				break
@@ -252,28 +252,28 @@ esac
 		;;
 		0) 	
 		read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
-		case $opcionSalir in 
-			y)
-			break
-			;;
-			Y)
-			break
-			;;
-			n)
-			echo -e "Hi again!"
-			sh /home/admin/ShellScriptsMBytes/operador.sh
-			;;
-			N)
-			echo -e "Hi again!"
-			sh /home/admin/ShellScriptsMBytes/operador.sh
-			;;
-			*)
-			echo -e "The last options never were selected" 
-			;;
-		esac
+			case $opcionSalir in 
+				y)
+				break
+				;;
+				Y)
+				break
+				;;
+				n)
+				echo -e "Hi again!"
+				sh /home/admin/ShellScriptsMBytes/operador.sh
+				;;
+				N)
+				echo -e "Hi again!"
+				sh /home/admin/ShellScriptsMBytes/operador.sh
+				;;
+				*)
+				echo -e "The last options never were selected" 
+				;;
+			esac
 		;;
 	esac		
- ;;
+ 	;;
  *)
 	 echo -e "Incorrect Option" 
  ;;
