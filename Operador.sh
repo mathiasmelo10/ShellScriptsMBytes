@@ -5,6 +5,8 @@ menuPrincipalOperador()
 	echo -e "\n1. Management" 
 	echo -e "\n2. Logs" 
 	echo -e "\n3. Back Up" 
+	echo -e "\n4. Net Configurations"
+	echo -e "\n5. Hard Reset Chat Sessions"
 	echo -e "\n0. Exit"
 }
 
@@ -28,10 +30,15 @@ subMenubackup()
 	sh /BackUp/backUp.sh	
 }
 
+subMenuConfiguracionDeRed()
+{
+	sh /Configuracion/netConfigurations.sh
+}
+
 subMenualta(){
 	echo -e "You are in  REGISTER now"	
 	echo -e "\n1. Users Register"
-	echo -e"\n2. Subjects Register" 
+	echo -e"\n2.  Subjects Register" 
 	echo -e "\n3. Groups Register"
 	echo -e "\n4. Go back Register Menu"
 	echo -e "\n5. Go bak Management Menu"
@@ -249,6 +256,12 @@ do
 		;;
 		3) 
 			subMenubackup
+		;;
+		4)
+			subMenuConfiguracionDeRed
+		;;
+		5)
+			sh ResetChatSessions/resetChatSessions.sh 
 		;;
 		0) 	
 		read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
