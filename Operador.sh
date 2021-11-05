@@ -6,7 +6,6 @@ menuPrincipalOperador()
 	echo -e "\n2. Logs" 
 	echo -e "\n3. Back Up" 
 	echo -e "\n4. Net Configurations"
-	echo -e "\n5. Hard Reset Chat Sessions"
 	echo -e "\n0. Exit"
 }
 
@@ -259,9 +258,6 @@ do
 		;;
 		4)
 			subMenuConfiguracionDeRed
-		;;
-		5)
-			sh ResetChatSessions/resetChatSessions.sh 
 		;;
 		0) 	
 		read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
