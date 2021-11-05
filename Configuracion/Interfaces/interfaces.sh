@@ -1,13 +1,16 @@
 interfaces(){
-echo "Bienvenido al menu de Interfaces"
-echo "1) Configurar -Tipo de conexion"
-echo "2) Configurar -IP"
-echo "3) Configurar -Mascara"
-echo "4) Configurar -Puerta de enlace"
-echo "5) Configurar -Configuraciones Establecidas Al Inicio Del Sistema"
-echo "6) Configuar -Desactivar demonio de intefaz de red prestablecido"
-echo "7) Volver a Menu Admin"
-echo "0) Salir"
+echo -e "+==================================================================+"
+echo "Welcome to Interfaces"
+echo -e "+==================================================================+"
+echo -e "\n1. Config -Connection Type"
+echo -e "\n2. Config -IP"
+echo -e "\n3. Config -Mask"
+echo -e "\n4. Config -Gateway"
+echo -e "\n5. Config -On boot Configs"
+echo -e "\n6. Config -Disable Defualt Net Interface Demon"
+echo -e "\n7. Go back Operator"
+echo -e "\n0. Exit Operator"
+echo -e "+==================================================================+"
 }
 interfaces
 read -p "Seleccione una opcion: " opcionInterfaces
@@ -31,13 +34,32 @@ case $opcionIntefaces in
 	sh nmcontrolled.sh
 	;;
 	7) 
-	sh /home/adminPractico(MathiasMelo)/adminPractico.sh
+	sh /home/admin/ShellScriptsMBytes/operador.sh
 	;;
 	0)
-	break
+	read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
+							case $opcionSalir in 
+								y)
+								break
+								;;
+								Y)
+								break
+								;;
+								n)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
+								;;
+								N)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
+								;;
+								*)
+								echo -e "The last options never were selected" 
+								;;
+							esac
 	;;
 	*)
-	echo "Opcion seleccionada incorrecta"
-	;;
+	 	echo -e "Incorrect Option" 
+ 	;;
 esac
 	

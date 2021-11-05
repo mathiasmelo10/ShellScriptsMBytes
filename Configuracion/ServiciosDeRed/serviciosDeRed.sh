@@ -1,9 +1,12 @@
 serviciosDeRed(){
-echo "Bienvenido al menu de Servicios de Red"
-echo "1) Recargar Servicio SSH"
-echo "2) Reiniciar Servicio de Red"
-echo "3) Volver a Menu Admin"
-echo "0) Salir"
+echo -e "+==================================================================+"
+echo -e "Welcome to Net Services"
+echo -e "+==================================================================+"
+echo -e "\n1. Recharge SSH Service"
+echo -e "\n2. Restart Net Service"
+echo -e "\n3. Go back Operator"
+echo -e "\n0. Exit Operator"
+echo -e "+==================================================================+"
 }
 serviciosDeRed
 read -p "Seleccione una opcion: " opcionServicios
@@ -14,10 +17,33 @@ case $opcionServicios in
 	2)
 	sh network.sh
 	;;
-	3)sh /home/adminPractico(MathiasMelo)/adminPractico.sh
+	3)
+	sh /home/admin/ShellScriptsMBytes/operador.sh
 	;;
 	0)
-	break
+	read -p "Are you sure to exit ? y/Y = YES | n/N = NO " opcionSalir
+							case $opcionSalir in 
+								y)
+								break
+								;;
+								Y)
+								break
+								;;
+								n)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
+								;;
+								N)
+								echo -e "Hi again!"
+								sh /home/admin/ShellScriptsMBytes/operador.sh
+								;;
+								*)
+								echo -e "The last options never were selected" 
+								;;
+							esac
 	;;
+	*)
+	 	echo -e "Incorrect Option" 
+ 	;;
 esac
 	
