@@ -1,6 +1,6 @@
 interfaces(){
 echo -e "+==================================================================+"
-echo "Welcome to Interfaces"
+echo -e "Welcome to Interfaces"
 echo -e "+==================================================================+"
 echo -e "\n1. Config -Connection Type"
 echo -e "\n2. Config -IP"
