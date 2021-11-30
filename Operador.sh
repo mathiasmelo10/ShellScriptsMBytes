@@ -37,7 +37,7 @@ subMenuConfiguracionDeRed()
 subMenualta(){
 	echo -e "You are in  REGISTER now"	
 	echo -e "\n1. Users Register"
-	echo -e"\n2.  Subjects Register" 
+	echo -e "\n2. Subjects Register" 
 	echo -e "\n3. Groups Register"
 	echo -e "\n4. Go back Register Menu"
 	echo -e "\n5. Go bak Management Menu"
