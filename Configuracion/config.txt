@@ -1,5 +1,11 @@
-IP:192.168.5.50         cat /Configuracion/config.txt | grep IP | cut -f1 -d":"
-PORT:3306               cat /Configuracion/config.txt | grep PORT | cut -f2 -d":"
-DBNAME:mbytes           cat /Configuracion/config.txt | grep DBNAME | cut -f3 -d":"
-USER:leandro.tiscornia  cat /Configuracion/config.txt | grep USER | cut -f4 -d":"
-PASSWORD:54388733       cat /Configuracion/config.txt | grep PASSWORD | cut -f5 -d":"
+IP:192.168.5.50        
+PORT:3306              
+DBNAME:mbytes           
+USER:leandro.tiscornia  
+PASSWORD:54388733
+Interfaz De Red: /etc/sysconfig/network-scripts/ifcfg-ens-33
+SSH: /etc/ssh/sshd-config
+Log1: /var/log/messages
+Log2: /var/log/secure
+Log3: /var/log/SiChatIn
+Log4: /var/log/wtmp
